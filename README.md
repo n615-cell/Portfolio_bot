@@ -27,11 +27,31 @@
 
 ## 📸 Скриншоты
 
+HOW IT WORKS = [
+
 https://cdn.phototourl.com/free/2026-06-25-d74d07c7-43fe-4033-a233-2decae875fc3.jpg
 
 https://cdn.phototourl.com/free/2026-06-25-58f40619-0539-4ab7-a7df-831f6ced32a1.png
 
 https://cdn.phototourl.com/free/2026-06-25-819a3c7d-56fa-4ec5-92d5-0a242ed2cefc.png
+
+]
+
+ARTS = [
+    "https://cdn.phototourl.com/free/2026-06-22-23361085-441b-4433-ac9a-19e46a843be5.jpg",
+    "https://cdn.phototourl.com/free/2026-06-22-49585388-3059-4e11-b136-570627c5292c.jpg",
+    "https://cdn.phototourl.com/free/2026-06-24-049ff60e-6981-4ea9-a518-4845f971cd55.jpg"
+]
+
+PROCESS_IMAGES = [
+    "https://cdn.phototourl.com/free/2026-06-24-28ba8bbd-90a0-4427-ba50-c5bf423c9b64.jpg",
+    "https://cdn.phototourl.com/free/2026-06-24-d9329096-7621-4f04-9515-623cb6ffd1c5.jpg",
+    "https://cdn.phototourl.com/free/2026-06-24-6b2cce72-a089-4eb4-b5f9-83b7b0a43c29.jpg"
+]
+
+BANNERS = [
+    "https://cdn.phototourl.com/free/2026-06-22-1f9fda06-3c8f-46fb-8a2e-ac31026df2fa.jpg",
+    "https://cdn.phototourl.com/free/2026-06-22-baed0192-b6cc-477b-89ca-99cf7fc39250.jp
 
 ---
 
