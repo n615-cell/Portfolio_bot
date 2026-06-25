@@ -6,7 +6,8 @@ def main_menu():
         "👤 Обо мне", "🎯 Цель", "📖 История",
         "👩‍🏫 Менторы", "📈 Прогресс", "🎨 Хобби",
         "💻 Проекты", "🌸 Вдохновение", "✨ Факт",
-        "📚 Книги", "❓ Викторина", "❓ Вопросы"
+        "🖼️ Мои арты", "📚 Книги", "❓ Викторина",
+        "❓ Вопросы"
     ]
     keyboard.add(*buttons)
     return keyboard
@@ -39,6 +40,16 @@ def drawing_menu():
     keyboard.add(*buttons)
     return keyboard
 
+def my_arts_menu():
+    keyboard = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+    buttons = [
+        "🖼️ Арты",
+        "🎨 Процесс",
+        "🔙 Назад"
+    ]
+    keyboard.add(*buttons)
+    return keyboard
+
 def arts_navigation_menu():
     keyboard = types.InlineKeyboardMarkup(row_width=2)
     keyboard.add(
@@ -59,7 +70,14 @@ def process_navigation_menu():
 
 def books_menu():
     keyboard = types.ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
-    buttons = ["📖 Собор Парижской Богоматери", "📖 Человек который смеется", "📖 Королева Марго", "📖 Унесённые ветром", "📖 Три товарища", "🔙 Назад"]
+    buttons = [
+        "📖 Собор Парижской Богоматери",
+        "📖 Человек который смеется",
+        "📖 Королева Марго",
+        "📖 Унесённые ветром",
+        "📖 Три товарища",
+        "🔙 Назад"
+    ]
     keyboard.add(*buttons)
     return keyboard
 

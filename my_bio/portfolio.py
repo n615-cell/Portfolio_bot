@@ -131,7 +131,6 @@ def handle_all_messages(message):
             bot.send_message(chat_id, "Пожалуйста, скажите, как вас зовут.\nНапишите, например: «Меня зовут Алия».", reply_markup=types.ReplyKeyboardRemove())
         return
 
-    # === ВИКТОРИНА ===
     if text == "❓ Викторина":
         bot.send_message(chat_id, "🎯 Выберите уровень сложности:", reply_markup=quiz_menu())
         return
@@ -154,7 +153,6 @@ def handle_all_messages(message):
         check_quiz_answer(chat_id, text)
         return
 
-    # === ВОПРОСЫ ===
     if text == "❓ Вопросы":
         questions_list = "\n".join([f"• {data['question']}" for key, data in QUESTIONS_BLOCK.items()])
         bot.send_message(chat_id, f"❓ Вот список вопросов, на которые я могу ответить:\n\n{questions_list}\n\n✏️ Просто напиши мне вопрос!", reply_markup=main_menu())
@@ -171,7 +169,7 @@ def handle_all_messages(message):
             bot.send_message(chat_id, f"💬 {answer}", reply_markup=main_menu())
             return
 
-    # === ГЛАВНОЕ МЕНЮ ===
+    # главное меню
     if text == "👤 Обо мне":
         bot.send_message(chat_id, f"👤 О себе:\n\n{ABOUT}", reply_markup=main_menu())
         return
@@ -204,7 +202,28 @@ def handle_all_messages(message):
         bot.send_message(chat_id, f"✨ {random.choice(FACTS)}", reply_markup=main_menu())
         return
 
-    # === МЕНТОРЫ ===
+    if text == "🖼️ Мои арты":
+        bot.send_message(chat_id, "🎨 Выберите, что хотите посмотреть:", reply_markup=my_arts_menu())
+        return
+
+    if text == "🖼️ Арты":
+        user_art_index[chat_id] = 0
+        send_art(chat_id, from_main_menu=True)
+        return
+
+    if text == "🎨 Процесс":
+        user_process_index[chat_id] = 0
+        send_process(chat_id, from_main_menu=True)
+        return
+
+    if text == "🔙 Назад" and chat_id in user_art_index:
+        if chat_id in user_art_index:
+            del user_art_index[chat_id]
+        if chat_id in user_process_index:
+            del user_process_index[chat_id]
+        bot.send_message(chat_id, "🏠 Главное меню:", reply_markup=main_menu())
+        return
+
     if text == "👩‍🏫 Менторы":
         bot.send_message(chat_id, "👩‍🏫 Какой ментор интересует?", reply_markup=mentor_menu())
         return
@@ -225,7 +244,6 @@ def handle_all_messages(message):
         bot.send_message(chat_id, f"📝 Другие менторы:\n\n{MENTORS_EXTRA}", reply_markup=mentor_menu())
         return
 
-    # === ХОББИ И РИСОВАНИЕ ===
     if text == "🎨 Хобби":
         bot.send_message(chat_id, "🎨 Какой раздел вас интересует?", reply_markup=hobby_menu())
         return
@@ -254,7 +272,6 @@ def handle_all_messages(message):
         bot.send_message(chat_id, "🎨 Возвращаемся в раздел хобби.", reply_markup=hobby_menu())
         return
 
-    # === БАННЕРЫ ===
     if text == "🎨 Баннеры":
         user_states[chat_id] = "banner"
         bot.send_message(chat_id, "🎨 Мои баннеры. Что хотите сделать?", reply_markup=banner_menu())
@@ -273,7 +290,6 @@ def handle_all_messages(message):
         bot.send_message(chat_id, "Вот мои баннеры! 🎨", reply_markup=banner_menu())
         return
 
-    # === КНИГИ ===
     if text == "📚 Книги":
         bot.send_message(chat_id, "📚 Здесь мои любимые книги! О какой хотите узнать больше?", reply_markup=books_menu())
         return
@@ -284,7 +300,6 @@ def handle_all_messages(message):
         bot.send_message(chat_id, f"📖 {book_name}:\n\n{description}", reply_markup=books_menu())
         return
 
-    # === ПРОЕКТЫ ===
     if text == "💻 Проекты":
         bot.send_message(chat_id, "💻 Какой проект вас интересует?", reply_markup=works_menu())
         return
@@ -337,7 +352,6 @@ def handle_all_messages(message):
             del user_names[f"{chat_id}_work"]
         return
 
-    # === НАЗАД ===
     if text == "🔙 Назад" or text == "🔙 Главное меню":
         if chat_id in user_quiz:
             del user_quiz[chat_id]
@@ -346,10 +360,8 @@ def handle_all_messages(message):
         bot.send_message(chat_id, "🏠 Главное меню:", reply_markup=main_menu())
         return
 
-    # === ВСЁ ОСТАЛЬНОЕ ===
     bot.send_message(chat_id, "Пожалуйста, используйте кнопки меню для навигации.", reply_markup=main_menu())
 
-# ===== INLINE КНОПКИ =====
 @bot.callback_query_handler(func=lambda call: True)
 def handle_inline(call):
     chat_id = call.message.chat.id
@@ -384,7 +396,6 @@ def handle_inline(call):
         bot.answer_callback_query(call.id)
         return
 
-# ===== ВИКТОРИНА =====
 def send_quiz_question(chat_id):
     data = user_quiz[chat_id]
     index = data["index"]
@@ -418,8 +429,7 @@ def check_quiz_answer(chat_id, user_answer):
     else:
         send_quiz_question(chat_id)
 
-# ===== АРТЫ И ПРОЦЕСС =====
-def send_art(chat_id, message_id=None):
+def send_art(chat_id, message_id=None, from_main_menu=False):
     index = user_art_index.get(chat_id, 0)
     art_url = ARTS[index]
     caption = f"🖼️ Арт {index+1} из {len(ARTS)}"
@@ -428,7 +438,7 @@ def send_art(chat_id, message_id=None):
     else:
         bot.send_photo(chat_id, art_url, caption=caption, reply_markup=arts_navigation_menu())
 
-def send_process(chat_id, message_id=None):
+def send_process(chat_id, message_id=None, from_main_menu=False):
     index = user_process_index.get(chat_id, 0)
     process_url = PROCESS_IMAGES[index]
     caption = f"🎨 Этап {index+1} из {len(PROCESS_IMAGES)}"

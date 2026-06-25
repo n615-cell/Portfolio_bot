@@ -4,7 +4,6 @@ import google.generativeai as genai
 from content import *
 from config import get_theme_by_time
 
-# Настройка API
 genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
 
 user_history = {}
@@ -97,13 +96,11 @@ def ask_gemini(user_question, user_name="Вы", chat_id=None):
         style_name = user_style.get(chat_id, "Классический")
         history = user_history.get(chat_id, [])
 
-        # Используем модель, которая точно работает с новой библиотекой
         model = genai.GenerativeModel("gemini-pro")
 
         prompt = build_prompt(user_name, style_name, history)
         full_prompt = f"{prompt}\n\nВопрос пользователя: {user_question}"
 
-        # НОВЫЙ СИНТАКСИС ДЛЯ 0.8.6
         response = model.generate_content(
             contents=full_prompt,
             generation_config={
@@ -114,10 +111,8 @@ def ask_gemini(user_question, user_name="Вы", chat_id=None):
 
         answer = response.text
 
-        # Убираем эмодзи
         answer = re.sub(r'[\U00010000-\U0010ffff]', '', answer)
 
-        # Сохраняем историю
         if chat_id:
             if chat_id not in user_history:
                 user_history[chat_id] = []
