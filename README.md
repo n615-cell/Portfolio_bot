@@ -27,32 +27,43 @@
 
 ## 📸 Скриншоты
 
-HOW IT WORKS = [
+### Главное меню и навигация
+![Главное меню](https://cdn.phototourl.com/free/2026-06-25-d74d07c7-43fe-4033-a233-2decae875fc3.jpg)
+*Главное меню бота с разделами: Обо мне, Менторы, Хобби, Проекты и другие.*
 
-https://cdn.phototourl.com/free/2026-06-25-d74d07c7-43fe-4033-a233-2decae875fc3.jpg
+![Навигация по разделам](https://cdn.phototourl.com/free/2026-06-25-58f40619-0539-4ab7-a7df-831f6ced32a1.png)
+*Пример перехода в раздел "Рисование" с выбором "Арты" или "Процесс".*
 
-https://cdn.phototourl.com/free/2026-06-25-58f40619-0539-4ab7-a7df-831f6ced32a1.png
+---
 
-https://cdn.phototourl.com/free/2026-06-25-819a3c7d-56fa-4ec5-92d5-0a242ed2cefc.png
+### Викторина
+![Викторина](https://cdn.phototourl.com/free/2026-06-25-819a3c7d-56fa-4ec5-92d5-0a242ed2cefc.png)
+*Викторина с тремя уровнями сложности — проверь, как хорошо ты меня знаешь!*
 
-]
+---
 
-ARTS = [
-    "https://cdn.phototourl.com/free/2026-06-22-23361085-441b-4433-ac9a-19e46a843be5.jpg",
-    "https://cdn.phototourl.com/free/2026-06-22-49585388-3059-4e11-b136-570627c5292c.jpg",
-    "https://cdn.phototourl.com/free/2026-06-24-049ff60e-6981-4ea9-a518-4845f971cd55.jpg"
-]
+### Галерея артов
+| Арт 1 | Арт 2 | Арт 3 |
+|-------|-------|-------|
+| [Арт 1](https://cdn.phototourl.com/free/2026-06-22-23361085-441b-4433-ac9a-19e46a843be5.jpg) | [Арт 2](https://cdn.phototourl.com/free/2026-06-22-49585388-3059-4e11-b136-570627c5292c.jpg) | [Арт 3](https://cdn.phototourl.com/free/2026-06-24-049ff60e-6981-4ea9-a518-4845f971cd55.jpg) |
 
-PROCESS_IMAGES = [
-    "https://cdn.phototourl.com/free/2026-06-24-28ba8bbd-90a0-4427-ba50-c5bf423c9b64.jpg",
-    "https://cdn.phototourl.com/free/2026-06-24-d9329096-7621-4f04-9515-623cb6ffd1c5.jpg",
-    "https://cdn.phototourl.com/free/2026-06-24-6b2cce72-a089-4eb4-b5f9-83b7b0a43c29.jpg"
-]
+---
 
-BANNERS = [
-    "https://cdn.phototourl.com/free/2026-06-22-1f9fda06-3c8f-46fb-8a2e-ac31026df2fa.jpg",
-    "https://cdn.phototourl.com/free/2026-06-22-baed0192-b6cc-477b-89ca-99cf7fc39250.jp
+### Процесс создания артов
+| Этап 1 | Этап 2 | Этап 3 |
+|--------|--------|--------|
+| [Этап 1](https://cdn.phototourl.com/free/2026-06-24-28ba8bbd-90a0-4427-ba50-c5bf423c9b64.jpg) | [Этап 2](https://cdn.phototourl.com/free/2026-06-24-d9329096-7621-4f04-9515-623cb6ffd1c5.jpg) | [Этап 3](https://cdn.phototourl.com/free/2026-06-24-6b2cce72-a089-4eb4-b5f9-83b7b0a43c29.jpg) |
 
+---
+
+### Баннеры
+![Баннер 1](https://cdn.phototourl.com/free/2026-06-22-1f9fda06-3c8f-46fb-8a2e-ac31026df2fa.jpg)
+![Баннер 2](https://cdn.phototourl.com/free/2026-06-22-baed0192-b6cc-477b-89ca-99cf7fc39250.jpg)
+
+---
+
+### Примеры работ (скриншоты проектов)
+*(Добавь сюда скриншоты твоих проектов, если есть ссылки)*
 ---
 
 ## 🛠 Технологии
